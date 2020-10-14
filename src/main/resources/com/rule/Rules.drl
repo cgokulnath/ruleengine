@@ -1,0 +1,16 @@
+package com.rule
+
+import com.example.demo.rules.Product
+
+rule "Offer for UPS"
+	when 
+		productObject: Product(type=="A1")
+	then
+		productObject.setDiscount(15);
+	end
+rule "Offer for CircuitBreaker"
+	when 
+		productObject: Product(type=="B1")
+	then
+		productObject.setDiscount(25);
+	end
